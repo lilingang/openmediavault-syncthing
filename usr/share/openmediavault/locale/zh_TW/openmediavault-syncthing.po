@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-syncthing\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-05 11:53-0600\n"
-"PO-Revision-Date: 2015-07-22 04:22+0000\n"
-"Last-Translator: kochin <kochinc@outlook.com>\n"
+"POT-Creation-Date: 2017-03-11 15:55-0600\n"
+"PO-Revision-Date: 2017-03-11 21:28+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-syncthing/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,6 +26,10 @@ msgstr "編輯用户"
 
 msgid "Enable"
 msgstr "啟用"
+
+msgid ""
+"Enable syncthing inotify.  Use inotify to detect changes almost instantly."
+msgstr ""
 
 msgid "Enabled"
 msgstr "已啟用"
@@ -48,14 +52,14 @@ msgstr "GUI 所用的 IP 地址。使用 0.0.0.0 代表主機全部的 IP。"
 msgid "IP address to listen on. Use 0.0.0.0 for all host IPs."
 msgstr "所要監聽的 IP 地址。使用 0.0.0.0 代表主機全部的 IP。"
 
+msgid "Inotify"
+msgstr ""
+
 msgid "Limit receive speed. Value is Kb/s. 0 to disable."
 msgstr "限制接收速度。數值是 Kb/s。0 表示停用。"
 
 msgid "Limit send speed. Value is Kb/s. 0 to disable."
 msgstr "限制發送速度。數值是 Kb/s。0 表示停用。"
-
-msgid "Line"
-msgstr "行數"
 
 msgid "Listen Address"
 msgstr "監聽地址"
@@ -63,20 +67,11 @@ msgstr "監聽地址"
 msgid "Listen Port"
 msgstr "監聽通訊埠"
 
-msgid "Log"
-msgstr "日誌"
-
 msgid "Max Receive"
 msgstr "最大接收速度"
 
 msgid "Max Send"
 msgstr "最大發送速度"
-
-msgid "Message"
-msgstr "訊息"
-
-msgid "Message - row {0}"
-msgstr "訊息 - 列 {0}"
 
 msgid "Open Web Interface"
 msgstr "開啟網路介面"
@@ -86,9 +81,6 @@ msgstr "路徑"
 
 msgid "Port to listen on."
 msgstr "所要監聽的通訊埠。"
-
-msgid "Restart"
-msgstr "重新啟動"
 
 msgid "Services"
 msgstr "服務"
@@ -102,17 +94,8 @@ msgstr "Syncthing"
 msgid "Syncthing Users"
 msgstr "Syncthing 用户"
 
-msgid "This GUI port is already in use."
-msgstr "此 GUI 通訊埠已經使用中。"
-
-msgid "This listen port is already in use."
-msgstr "此監聽通訊埠已經使用中。"
-
-msgid "This username is already in use."
-msgstr "此用户名稱已經使用中。"
+msgid "UUID"
+msgstr ""
 
 msgid "User"
 msgstr "用户"
-
-msgid "View Log"
-msgstr "檢視日誌"

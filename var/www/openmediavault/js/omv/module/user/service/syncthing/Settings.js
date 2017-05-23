@@ -3,7 +3,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2015-2016 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2015-2017 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -84,7 +84,13 @@ Ext.define("OMV.module.user.service.syncthing.Settings", {
                 name       : "username",
                 fieldLabel : _("User"),
                 readOnly   : true,
-                value      : ""
+                hidden     : true
+            },{
+                xtype      : "textfield",
+                name       : "uuid",
+                fieldLabel : _("UUID"),
+                readOnly   : true,
+                hidden     : true
             },{
                 xtype         : "numberfield",
                 name          : "port",
@@ -160,6 +166,15 @@ Ext.define("OMV.module.user.service.syncthing.Settings", {
                 plugins: [{
                     ptype: "fieldinfo",
                     text: _("Limit receive speed. Value is Kb/s. 0 to disable.")
+                }]
+            },{
+                xtype      : "checkbox",
+                name       : "inotify",
+                fieldLabel : _("Inotify"),
+                checked    : true,
+                plugins: [{
+                    ptype: "fieldinfo",
+                    text: _("Enable syncthing inotify.  Use inotify to detect changes almost instantly.")
                 }]
             }]
         }];

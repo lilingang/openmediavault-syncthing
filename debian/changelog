@@ -1,3 +1,60 @@
+openmediavault-syncthing (3.10) stable; urgency=low
+
+  * Improve foreign content handling
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 18 Mar 2017 11:54:06 -0500
+
+openmediavault-syncthing (3.9) stable; urgency=low
+
+  * Switch to systemd unit files
+  * Remove log tabs since logging is to syslog
+  * Add syncthing-inotify option
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 11 Mar 2017 08:25:07 -0600
+
+openmediavault-syncthing (3.8) stable; urgency=low
+
+  * Fix postinst
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 27 Sep 2016 20:51:08 -0500
+
+openmediavault-syncthing (3.7) stable; urgency=low
+
+  * update for 3.0.40
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 27 Sep 2016 20:44:05 -0500
+
+openmediavault-syncthing (3.6) stable; urgency=low
+
+  * Fix for OMV 3.0.31
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 08 Aug 2016 09:51:45 -0500
+
+openmediavault-syncthing (3.5) stable; urgency=low
+
+  * Fix mkconf bug
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 16 Jul 2016 09:29:53 -0500
+
+openmediavault-syncthing (3.4) stable; urgency=low
+
+  * Fix for omv-mkconf
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 15 Jul 2016 09:42:02 -0500
+
+openmediavault-syncthing (3.3) stable; urgency=low
+
+  * Update for auto notifications
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 07 Jun 2016 19:57:03 -0500
+
+openmediavault-syncthing (3.2) stable; urgency=low
+
+  * Update for datamodels
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sun, 29 May 2016 11:13:05 -0500
+
 openmediavault-syncthing (3.1) stable; urgency=low
 
   * Changed dependency of OMV Package to = 3.0.13 to avoid accidental

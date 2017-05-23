@@ -1,40 +1,50 @@
-[
-  {
-    "type": "rpc",
-    "id": "rpc.syncthing.setuser",
-    "params": {
-      "type": "object",
-      "properties": {
-        "uuid": {
-          "type": "string",
-          "format": "uuidv4",
-          "required": true
-        },
-        "enable": {
-          "type": "boolean"
-        },
-        "username": {
-          "type": "string"
-        },
-        "port": {
-          "type": "integer"
-        },
-        "address": {
-          "type": "string"
-        },
-        "lport": {
-          "type": "integer"
-        },
-        "laddress": {
-          "type": "string"
-        },
-        "maxsend": {
-          "type": "integer"
-        },
-        "maxrecv": {
-          "type": "integer"
-        }
-      }
-    }
-  }
-]
+{
+	"type": "rpc",
+	"id": "rpc.syncthing.setuser",
+	"params": {
+		"type": "object",
+		"properties": {
+			"uuid": {
+				"type": "string",
+				"format": "uuidv4",
+				"required": true
+			},
+			"enable": {
+				"type": "boolean",
+				"required": true
+			},
+			"username": {
+				"type": "string",
+				"required": true
+			},
+			"port": {
+				"type": "integer",
+				"required": true
+			},
+			"address": {
+				"type": "string",
+				"required": true
+			},
+			"lport": {
+				"type": "integer",
+				"required": true
+			},
+			"laddress": {
+				"type": "string",
+				"required": true
+			},
+			"maxsend": {
+				"type": "integer",
+				"required": true
+			},
+			"maxrecv": {
+				"type": "integer",
+				"required": true
+			},
+			"inotify": {
+				"type": "boolean",
+				"required": false
+			}
+		}
+	}
+}

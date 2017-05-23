@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-syncthing\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-05 11:53-0600\n"
-"PO-Revision-Date: 2015-06-25 13:45+0000\n"
+"POT-Creation-Date: 2017-03-11 15:55-0600\n"
+"PO-Revision-Date: 2017-03-11 21:28+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-syncthing/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,10 @@ msgid "Edit user"
 msgstr ""
 
 msgid "Enable"
+msgstr ""
+
+msgid ""
+"Enable syncthing inotify.  Use inotify to detect changes almost instantly."
 msgstr ""
 
 msgid "Enabled"
@@ -47,13 +51,13 @@ msgstr ""
 msgid "IP address to listen on. Use 0.0.0.0 for all host IPs."
 msgstr ""
 
+msgid "Inotify"
+msgstr ""
+
 msgid "Limit receive speed. Value is Kb/s. 0 to disable."
 msgstr ""
 
 msgid "Limit send speed. Value is Kb/s. 0 to disable."
-msgstr ""
-
-msgid "Line"
 msgstr ""
 
 msgid "Listen Address"
@@ -62,19 +66,10 @@ msgstr ""
 msgid "Listen Port"
 msgstr ""
 
-msgid "Log"
-msgstr ""
-
 msgid "Max Receive"
 msgstr ""
 
 msgid "Max Send"
-msgstr ""
-
-msgid "Message"
-msgstr ""
-
-msgid "Message - row {0}"
 msgstr ""
 
 msgid "Open Web Interface"
@@ -84,9 +79,6 @@ msgid "Path"
 msgstr ""
 
 msgid "Port to listen on."
-msgstr ""
-
-msgid "Restart"
 msgstr ""
 
 msgid "Services"
@@ -101,17 +93,8 @@ msgstr ""
 msgid "Syncthing Users"
 msgstr ""
 
-msgid "This GUI port is already in use."
-msgstr ""
-
-msgid "This listen port is already in use."
-msgstr ""
-
-msgid "This username is already in use."
+msgid "UUID"
 msgstr ""
 
 msgid "User"
-msgstr ""
-
-msgid "View Log"
 msgstr ""

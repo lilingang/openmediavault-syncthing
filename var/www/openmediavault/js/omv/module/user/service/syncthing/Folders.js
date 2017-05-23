@@ -3,7 +3,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2015-2016 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2015-2017 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,11 +45,13 @@ Ext.define("OMV.module.user.service.syncthing.Folders", {
     stateful          : true,
     stateId           : "1a27a76d-6804-1332-b31b-8b48c0ea6dde",
     columns           : [{
+        xtype     : "textcolumn",
         text      : _("ID"),
         sortable  : true,
         dataIndex : "id",
         stateId   : "id"
     },{
+        xtype     : "textcolumn",
         text      : _("Path"),
         sortable  : true,
         dataIndex : "path",

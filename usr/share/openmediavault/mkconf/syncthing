@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2015-2016 OpenMediaVault Plugin Developers
+# Copyright (C) 2015-2017 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,18 +23,19 @@ set -e
 RUN_GRP="users"
 
 SERVICE="syncthing"
+SERVICE_INOTIFY="syncthing-inotify"
 XPATH="/config/services/${SERVICE}"
 XPATH_USER="${XPATH}/users/user"
 
 SYNCTHING_CONFIG_DIR=".config"
 SYNCTHING_CONFIG="${SYNCTHING_CONFIG_DIR}/${SERVICE}/config.xml";
-SYNCTHING_DEFAULT_FILE="/etc/default/${SERVICE}"
 
-username=$2
+username=$1
 
 if [ "${username}" != "" ]; then
     position="[username='${username}']"
     enable=$(omv_config_get "${XPATH_USER}${position}/enable")
+    inotify=$(omv_config_get "${XPATH_USER}${position}/inotify")
 
     if [ "${enable}" != "0" ]; then
         home=$(getent passwd ${username} | awk -F: '{print $6}')
@@ -71,79 +72,19 @@ if [ "${username}" != "" ]; then
             chmod 0600 "${home}/${SYNCTHING_CONFIG}"
         fi
 
-        deb-systemd-invoke restart ${SERVICE}.service ${username} >/dev/null || true
-    fi
-else
-    first=0
-    restart=0
-    names=""
-
-    count=$(omv_config_get_count "${XPATH_USER}")
-    index=1
-    while [ ${index} -le ${count} ]; do
-        position="[position()=${index}]"
-        enable=$(omv_config_get "${XPATH_USER}${position}/enable")
-
-        if [ "${enable}" != "0" ]; then
-            username=$(omv_config_get "${XPATH_USER}${position}/username")
-            home=$(getent passwd ${username} | awk -F: '{print $6}')
-
-            if [ "${home}" != "" ]; then
-                port=$(omv_config_get "${XPATH_USER}${position}/port")
-                address=$(omv_config_get "${XPATH_USER}${position}/address")
-                lport=$(omv_config_get "${XPATH_USER}${position}/lport")
-                laddress=$(omv_config_get "${XPATH_USER}${position}/laddress")
-                maxsend=$(omv_config_get "${XPATH_USER}${position}/maxsend")
-                maxrecv=$(omv_config_get "${XPATH_USER}${position}/maxrecv")
-
-                # create home directory if it does not exist and fix permissions
-                mkdir -p ${home}
-                chown ${username}:${RUN_GRP} ${home}
-
-                # generate initial config, certs and then exit
-                unset HOME
-                export HOME="${home}/${SYNCTHING_CONFIG_DIR}"
-                /usr/bin/syncthing -generate="${home}/${SYNCTHING_CONFIG_DIR}/syncthing"
-
-                # Change settings
-                new="${address}:${port}"
-                xmlstarlet ed -L -u "/configuration/gui/address" -v ${new} "${home}/${SYNCTHING_CONFIG}"
-
-                new="tcp://${laddress}:${lport}"
-                xmlstarlet ed -L -u "/configuration/options/listenAddress" -v ${new} "${home}/${SYNCTHING_CONFIG}"
-
-                xmlstarlet ed -L -u "/configuration/options/maxSendKbps" -v ${maxsend} "${home}/${SYNCTHING_CONFIG}"
-                xmlstarlet ed -L -u "/configuration/options/maxRecvKbps" -v ${maxrecv} "${home}/${SYNCTHING_CONFIG}"
-
-                # fix ownership and permissions
-                chown -R ${username}:${RUN_GRP} "${home}/${SYNCTHING_CONFIG_DIR}"
-                chmod 0600 "${home}/${SYNCTHING_CONFIG}"
-
-                # add to names list
-                if [ "${first}" != "0" ]; then
-                    names="${names} ${username}"
-                else
-                    names="${username}"
-                    first=1
-                fi
-
-                restart=1
-            fi
-        fi
-
-        index=$(( ${index} + 1 ))
-    done
-
-    if [ "${restart}" != "0" ]; then
-        deb-systemd-invoke stop ${SERVICE}.service >/dev/null || true
+        systemctl enable ${SERVICE}@${username}.service >/dev/null || true
+        systemctl restart ${SERVICE}@${username}.service >/dev/null || true
+    else
+        systemctl stop ${SERVICE}@${username}.service >/dev/null || true
+        systemctl disable ${SERVICE}@${username}.service >/dev/null || true
     fi
 
-    if [ "${names}" != "" ]; then
-        echo "ST_USERS=\"${names}\"" > ${SYNCTHING_DEFAULT_FILE}
-    fi
-
-    if [ "${restart}" != "0" ]; then
-        deb-systemd-invoke start ${SERVICE}.service >/dev/null || true
+    if [ "${inotify}" != "0" ]; then
+        systemctl enable ${SERVICE_INOTIFY}@${username}.service >/dev/null || true
+        systemctl restart ${SERVICE_INOTIFY}@${username}.service >/dev/null || true
+    else
+        systemctl stop ${SERVICE_INOTIFY}@${username}.service >/dev/null || true
+        systemctl disable ${SERVICE_INOTIFY}@${username}.service >/dev/null || true
     fi
 fi
 
