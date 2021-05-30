@@ -3,91 +3,93 @@
 # This file is distributed under the same license as the openmediavault-syncthing package.
 # 
 # Translators:
+# Jonatan Nyberg, 2018
+# Jonatan Nyberg, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-syncthing\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-10 07:48-0600\n"
-"PO-Revision-Date: 2017-11-10 13:48+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Portuguese (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-syncthing/language/pt/)\n"
+"PO-Revision-Date: 2018-11-25 08:11+0000\n"
+"Last-Translator: Jonatan Nyberg\n"
+"Language-Team: Swedish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-syncthing/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
+"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add user"
-msgstr ""
+msgstr "Lägg till användare"
 
 msgid "Edit user"
-msgstr ""
+msgstr "Redigera användare"
 
 msgid "Enable"
-msgstr ""
+msgstr "Aktivera"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiverad"
 
 msgid "Folders"
-msgstr ""
+msgstr "Mappar"
 
 msgid "GUI Address"
-msgstr ""
+msgstr "GUI-adresser"
 
 msgid "GUI Port"
-msgstr ""
+msgstr "GUI-port"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "IP address for GUI. Use 0.0.0.0 for all host IPs."
-msgstr ""
+msgstr "IP-adress för GUI. Använd 0.0.0.0 för alla värd-IP-adresser."
 
 msgid "IP address to listen on. Use 0.0.0.0 for all host IPs."
-msgstr ""
+msgstr "IP-adress att lyssna på. Använd 0.0.0.0 för alla värd-IP-adresser."
 
 msgid "Limit receive speed. Value is Kb/s. 0 to disable."
-msgstr ""
+msgstr "Begränsa mottagningshastigheten. Värdet är Kb/s. 0 för att inaktivera."
 
 msgid "Limit send speed. Value is Kb/s. 0 to disable."
-msgstr ""
+msgstr "Begränsa sändningshastigheten. Värdet är Kb/s. 0 för att inaktivera."
 
 msgid "Listen Address"
-msgstr ""
+msgstr "Adresser att lyssna på"
 
 msgid "Listen Port"
-msgstr ""
+msgstr "Port att lyssna på"
 
 msgid "Max Receive"
-msgstr ""
+msgstr "Högsta mottagningshastighet"
 
 msgid "Max Send"
-msgstr ""
+msgstr "Högsta sändhastighet"
 
 msgid "Open Web Interface"
-msgstr ""
+msgstr "Öppna webbgränsnittet"
 
 msgid "Path"
-msgstr ""
+msgstr "Sökväg"
 
 msgid "Port to listen on."
-msgstr ""
+msgstr "Port att lyssna på."
 
 msgid "Services"
-msgstr ""
+msgstr "Tjänster"
 
 msgid "Settings"
-msgstr ""
+msgstr "Inställningar"
 
 msgid "Syncthing"
-msgstr ""
+msgstr "Syncthing"
 
 msgid "Syncthing Users"
-msgstr ""
+msgstr "Syncthing-användare"
 
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 msgid "User"
-msgstr ""
+msgstr "Användare"
